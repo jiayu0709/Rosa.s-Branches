@@ -172,28 +172,20 @@
 
   <!-- LIFF 初始化程式碼 -->
   <script>
-    // ✅ 先移除快取參數（登入回來時清乾淨）
-  if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
-    const cleanUrl = window.location.origin + window.location.pathname;
-    window.location.replace(cleanUrl);
-  }
-
-  // ✅ 接著執行 LIFF 初始化流程
   async function main() {
-    await liff.init({ liffId: "2007250477-mjA9gVo2" });
+  await liff.init({ liffId: "你的 LIFF ID" });
 
-    if (!liff.isLoggedIn()) {
-      liff.login();
-    } else {
-      const profile = await liff.getProfile();
-      document.getElementById("userInfo").innerHTML = `
-        <p>歡迎，${profile.displayName}</p>
-        <img src="${profile.pictureUrl}" width="80" style="border-radius: 50%" />
-      `;
-    }
+  if (liff.isLoggedIn()) {
+    const profile = await liff.getProfile();
+    document.getElementById("userInfo").innerHTML = `
+      <p>歡迎，${profile.displayName}</p>
+      <img src="${profile.pictureUrl}" width="80" style="border-radius: 50%" />
+    `;
   }
+}
 
-  main();
+main();
+
   </script>
 </body>
 </html>
