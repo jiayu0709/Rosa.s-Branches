@@ -146,13 +146,32 @@
 
   <script>
     // 模擬從後端取得的資料
-    const branchInfo = {
-      name: "Rosa's School 台北分校",
-      address: "台北市信義區市府路45號",
-      mapLink: "https://www.google.com/maps?q=台北市信義區市府路45號",
-      phone: "02-1234-5678",
-      image: "images/rosa2.jpg" // ✅ 照片檔案的路徑
-    };
+    const branchInfo = [
+        { name: "樂莎旗艦校",
+          address: "高雄市楠梓區翠屏路117號",
+          mapLink: "https://www.google.com/maps?q=高雄市楠梓區翠屏路117號",
+          phone: " 07-3611977",
+          image: "images/rosa2.jpg" // ✅ 照片檔案的路徑 },
+        },    
+        { name: "樂莎高大校",
+          address: "高雄市楠梓區大學東路656號",
+          mapLink: "https://www.google.com/maps?q=高雄市楠梓區大學東路656號",
+          phone: "07-3651377",
+          image: "images/rosa2.jpg" // ✅ 照片檔案的路徑 },
+        },
+        { name: "樂莎翠屏校",
+          address: "高雄市楠梓區翠屏路123號2樓",
+          mapLink: "https://www.google.com/maps?q=高雄市楠梓區翠屏路123號2樓",
+          phone: "07-3659509",
+          image: "images/rosa2.jpg" // ✅ 照片檔案的路徑 },
+        },
+        { name: "蘿莎惠民校",
+          address: "高雄市楠梓區惠民路20號",
+          mapLink: "https://www.google.com/maps?q=高雄市楠梓區惠民路20號",
+          phone: "07-3619636",
+          image: "images/rosa2.jpg" // ✅ 照片檔案的路徑 },
+        }
+      ];
 
     // 動態注入卡片內容
     const card = document.getElementById("branch-card");
