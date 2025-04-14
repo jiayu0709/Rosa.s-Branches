@@ -146,7 +146,7 @@
 
   <script>
     // 模擬從後端取得的資料
-    const branchInfo = [
+    const branchlist = [
         { name: "樂莎旗艦校",
           address: "高雄市楠梓區翠屏路117號",
           mapLink: "https://www.google.com/maps?q=高雄市楠梓區翠屏路117號",
@@ -174,7 +174,12 @@
       ];
 
     // 動態注入卡片內容
-    const card = document.getElementById("branch-card");
+    const card = document.getElementById("branch-list");
+
+    branchList.forEach(branch => {
+    const card = document.createElement("div");
+    card.className = "card";
+
     card.innerHTML = `
       <img src="${branchInfo.image}" alt="分校圖片" /> <!-- ✅ 這行就是動態插入圖片 -->
       <div class="card-body">
@@ -183,6 +188,7 @@
         <div class="card-content">電話：<a href="tel:${branchInfo.phone}">${branchInfo.phone}</a></div>
       </div>
     `;
+    list.appendChild(card);
 
     if (window.location.search.includes("code=") || window.location.search.includes("state=")) {
       const cleanUrl = window.location.origin + window.location.pathname; // 去除 LIFF code 參數
@@ -199,6 +205,7 @@
         `;
       }
     }
+  });
 
   </script>
 
