@@ -238,9 +238,14 @@
         <img src="${branch.image}" alt="分校圖片" />
         <div class="card-body">
           <div class="card-title">${branch.name}</div>
-          <div class="card-content">📍<a href="${branch.mapLink}" target="_blank">${branch.address}</a></div>
-          <div class="card-content">📞<a href="tel:${branch.phone}">${branch.phone}</a></div>
-          ${extraContent} 
+          ${
+            branch.name === "樂莎左營高鐵校"
+              ? `${extraContent}`
+              : `
+              <div class="card-content">📍<a href="${branch.mapLink}" target="_blank">${branch.address}</a></div>
+              <div class="card-content">📞<a href="tel:${branch.phone}">${branch.phone}</a></div>
+            `
+          }
         </div>
       `;
       list.appendChild(card);
