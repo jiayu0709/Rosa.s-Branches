@@ -250,7 +250,11 @@
               ? `${extraContent}`
               : `
               <div class="card-content">📍<a href="${branch.mapLink}" target="_blank">${branch.address}</a></div>
-              <div class="card-content">📞<a href="tel:${branch.phone}">${branch.phone}</a></div>
+              ${
+              branch.phone?.trim()
+                ? `<div class="card-content">📞<a href="tel:${branch.phone.trim().replace(/\s|-/g,'')}">${branch.phone.trim()}</a></div>`
+                : ``
+            }
             `
           }
         </div>
