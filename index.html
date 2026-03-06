@@ -226,6 +226,14 @@
         phone: "",
         image: "images/rosa14.jpg"
       },
+
+      {
+        name: "樂莎楠梓國小校",
+        address: "高雄市楠梓區楠梓路319號",
+        mapLink: "https://www.google.com/maps/place/825%E9%AB%98%E9%9B%84%E5%B8%82%E6%A9%8B%E9%A0%AD%E5%8D%80%E6%A5%A0%E6%A2%93%E8%B7%AF319%E8%99%9F/@22.7346288,120.3239222,17z/data=!3m1!4b1!4m6!3m5!1s0x346e0fcc06f14427:0x20f76bb76adcc15e!8m2!3d22.7346239!4d120.3264971!16s%2Fg%2F11yts79jcb!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D",
+        phone: "",
+        image: "images/rosalogo.png"
+      },
     ];
 
     const list = document.getElementById("branch-list");
@@ -235,7 +243,7 @@
       card.className = "card";
 
       const extraContent =
-    branch.name === "樂莎左營高鐵校"
+    branch.name === "樂莎楠梓國小校"
       ? `<div class="card-extra">
            <p>Ｃoming soon...</p>
          </div>`
@@ -246,7 +254,7 @@
         <div class="card-body">
           <div class="card-title">${branch.name}</div>
           ${
-            branch.name === "樂莎左營高鐵校"
+            branch.name === "樂莎楠梓國小校"
               ? `${extraContent}`
               : `
               <div class="card-content">📍<a href="${branch.mapLink}" target="_blank">${branch.address}</a></div>
