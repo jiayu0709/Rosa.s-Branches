@@ -253,17 +253,17 @@
         <img src="${branch.image}" alt="分校圖片" />
         <div class="card-body">
           <div class="card-title">${branch.name}</div>
+
           ${
-            branch.name === "樂莎楠梓國小校"
-              ? `${extraContent}`
-              : `
-              <div class="card-content">📍<a href="${branch.mapLink}" target="_blank">${branch.address}</a></div>
-              ${
-              branch.phone?.trim()
-                ? `<div class="card-content">📞<a href="tel:${branch.phone.trim().replace(/\s|-/g,'')}">${branch.phone.trim()}</a></div>`
-                : ``
-            }
-            `
+            branch.address?.trim()
+              ? `<div class="card-content">📍<a href="${branch.mapLink}" target="_blank">${branch.address}</a></div>`
+              : ``
+          }
+
+          ${
+            branch.phone?.trim()
+              ? `<div class="card-content">📞<a href="tel:${branch.phone.trim().replace(/\s|-/g,'')}">${branch.phone.trim()}</a></div>`
+              : ``
           }
         </div>
       `;
